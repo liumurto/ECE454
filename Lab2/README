@@ -1,0 +1,12 @@
+Final code from Lab 2: Memory Performance.
+
+The task was to optimize a basic implementation of an image manipulation parser and have it run as fast as we could.
+
+Final implementation was ~1130x faster than the original.
+
+The optimizations made were:
+
+1. Minimizing multiplications in the code
+2. Removing extraneous shifts on the white pixels
+3. Consolidating all transformations into one set that is done at the end of each batch of 25
+4. Minor loop unrolling and LICM
