@@ -1,0 +1,9 @@
+Final code from Lab 3: Dynamic Memory Allocation
+
+The task was to create a dynamic memory manager, and use it to implement our own versions of malloc, realloc, and free.
+
+The design chosen in the final implementation was a segregated free list, seperated by multiples of powers of 2 (2, 4, 8, etc.)
+Each allocated block has an 8-byte header and fooder, with a minimum 16-byte payload.
+Each free block has an 8-byte header and footer, with 4 bytes reserved for a pointer to the next and previous free block in the list respectively.
+Blocks are coalesced immediately on frees and heap extensions.
+Blocks are split based on whether or not a full allocated block can be formed from the fragment left over after the requested malloc is complete.
