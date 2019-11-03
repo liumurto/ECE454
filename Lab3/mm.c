@@ -26,7 +26,7 @@
  ********************************************************/
 team_t team = {
     /* Team name */
-    "help_me",
+    "mm_free(me)",
     /* First member's full name */
     "Murton Liu",
     /* First member's email address */
@@ -235,9 +235,7 @@ void *find_fit(size_t asize)
 		while (curr_block != NULL)
 		{
 			if (GET_SIZE(curr_block) >= asize)
-			{
 				return split(curr_block, asize);
-			}
 
 			curr_block = GET_NEXT_PTR(curr_block);
 		}
@@ -265,9 +263,8 @@ void place(void* bp, size_t asize)
  **********************************************************/
 void mm_free(void *bp)
 {
-	if(bp == NULL){
+	if(bp == NULL)
       return;
-    }
     //Mark block as freed
     size_t size = GET_SIZE(HDRP(bp));
     PUT(HDRP(bp), PACK(size,0));
