@@ -1,0 +1,2 @@
+Code for Lab 4 of ECE454. We were given a basic implementation of a hash table and tasked to parallelize it in multiple different ways,
+as detailed in the handout.
